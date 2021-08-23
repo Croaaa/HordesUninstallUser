@@ -24,8 +24,6 @@
     forumInit: false,
   };
 
-  const warnList = ["1735033", "1730724"];
-
   const store = KhLib.createStore("huu", {
     uninstalled: [],
   });
@@ -227,14 +225,6 @@
 
   const refresh = () => {
     const button = getButton();
-
-    const userToWarn = warnList.some(
-      (id) => dom.query(`.tid_name[href="//twinoid.com/user/${id}"]`).length
-    );
-
-    if (userToWarn) {
-      displayNotification(`Comment ça le script d'Eliam?`, () => {});
-    }
 
     uninstallAll();
     if (dom.query(".left .button:contains('dénonciation')").length) {
